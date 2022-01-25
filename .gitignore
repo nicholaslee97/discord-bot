@@ -1,0 +1,6 @@
+/node_modules/
+/music bot/
+/old/
+/music bot test/
+.env
+*.json
