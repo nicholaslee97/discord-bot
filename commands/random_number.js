@@ -17,9 +17,12 @@ module.exports = {
 
 	async execute(interaction) {
 		if (interaction.options.getSubcommand() === 'god_number') {
+			const wait = require('util').promisify(setTimeout);
 			const num = Math.round(Math.random() * 899999 + 100000);
 			console.log(num);
-			await interaction.reply('123' + num);
+			await interaction.reply(`||http://nhentai.net/g/${num}||`);
+			await wait(3000);
+			await interaction.editReply(`${num}`);
 		}
 		else if (interaction.options.getSubcommand() === 'num') {
 			const min = interaction.options.getInteger('min');
